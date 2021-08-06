@@ -1,0 +1,375 @@
+/*@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Righteous&display=swap");*/
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway+Dots&family=Raleway:wght@300&family=Righteous&display=swap");
+:root {
+  --navbarColor: #eddcd2;
+  --navbarFont: "Righteous", cursive;
+  --textingFont: "Raleway", sans-serif;
+  --logoColor: #0f4c5c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*background img*/
+.main {
+  background: url(./img/101_taipei.jpg) no-repeat center center / cover;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+}
+
+.navbar {
+  text-transform: uppercase;
+  /*background: var(--navbarColor);*/
+  background: transparent;
+  font-family: var(--navbarFont);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+#navbar_logo {
+  background: #4a4e69;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.fa-gem {
+  margin-right: 0.5rem;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+.navbar__item {
+  height: 80px;
+}
+
+.navbar_links {
+  color: #eddcd2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  transition: all 0.5s ease;
+}
+
+.navbar__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 20px;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--navbarColor);
+}
+.button:hover {
+  background: #43aa8b;
+  transition: all 0.3s ease;
+}
+
+.navbar_links:hover {
+  color: #43aa8b;
+  transition: all 0.3s ease;
+}
+
+/*cursor for typer*/
+.txt-type > .txt {
+  border-right: 0.2rem solid #777;
+  font-weight: bold;
+  color: #e5989b;
+}
+
+@media screen and (max-width: 960px) {
+  .navbar__container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0;
+  }
+
+  .navbar__menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 0;
+    background: #eddcd2;
+    transition: all 0.5s ease;
+    height: 50vh;
+    z-index: -1;
+  }
+
+  .navbar__menu.active {
+    /*for javascript to trigger*/
+    /*background: #eddcd2;*/
+    background: #fff;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    font-size: 1.6rem;
+  }
+
+  #navbar_logo {
+    padding-left: 25px;
+  }
+
+  .navbar__toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar_links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .navbar__btn {
+    padding-bottom: 2rem;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+  }
+
+  .navbar__toggle .bar {
+    /*three lil bar on the as the menu logo*/
+    display: block;
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.text-container {
+  /*內含有texting words 的 block*/
+  /*background: transparent url(./img/101_taipei.jpg) no-repeat center center /
+  cover;*/
+  font-family: var(--textingFont);
+  font-weight: bold;
+  color: #fff;
+  text-transform: capitalize;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 3rem;
+}
+
+.header1,
+.header2 {
+  /*font-weight: 500;*/
+  margin: 0.4rem;
+}
+
+.header1 {
+  font-size: 3.5rem;
+}
+
+.header2 {
+  font-size: 2rem;
+}
+
+.scroll-down {
+  height: 50px;
+  width: 30px;
+  border: 2px solid #fff;
+  position: absolute; /*!!!!!!!!!!!!!!!!!!*/
+  left: 47%;
+  bottom: -30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.scroll-down::before,
+.scroll-down::after {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  border: 2px solid #fff;
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::after {
+  top: 30%;
+}
+
+@keyframes scroll-down {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  /*if the browser size is over 1200px*/
+  .header1 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .text-container {
+    padding: 0 1rem;
+  }
+  .header1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header1 {
+    font-size: 2.5rem;
+  }
+}
+
+.test {
+  width: 100%;
+  height: 50px;
+  z-index: 50;
+}
+
+.intro {
+  height: 200vh;
+  text-align: left;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-top: solid 10px #4a4e69;
+  background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+}
+
+.my-selfie {
+  height: 800px;
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+.content {
+  padding: 9em 9em;
+  z-index: 1;
+  position: relative;
+  font-family: "Lobster", cursive;
+}
+
+.content > h2 {
+  font-size: 8em;
+}
+
+.content > p {
+  font-size: 3.2em;
+  font-family: "Raleway Dots", cursive;
+  font-weight: bold;
+  line-height: 100px;
+}
+
+.content > p > span {
+  font-weight: bolder;
+  color: #ffbe0b;
+}
+
+footer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
