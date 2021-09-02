@@ -11,6 +11,8 @@
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <div id="progressbar"></div>
+    <div id="scrollPaath"></div>
     <nav class="navbar">
         <div class="navbar__container">
             <a href="#" id="navbar_logo">TOP</a>    
@@ -58,11 +60,22 @@
         <img class="my-selfie" src="./img/S__761868_adobespark.png" alt="selfie_error">
     </section>
     <script src="animation.js"></script>
+    <section class = "experience">
+
+    </section>
     <footer>
         <h1>Wooooooo</h1>
-        <h2>Noooooooo!</h2>
+
     </footer>
     <!--<script src="colorChanging.js"></script> -->
     <script src="autoScroll.js"></script> 
+    <script type="text/javascript">
+        let progressbar = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progressbar.style.height = progressHeight + "%";
+        }
+    </script>
 </body>
 </html>
